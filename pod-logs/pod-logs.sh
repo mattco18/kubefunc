@@ -47,7 +47,7 @@ SEL=$(_kube_list_pods)
 IFS=":" read -ra POD <<< "${SEL}"
 
 POD_STATUS=$(echo "${POD[2]}" | tr '[:upper:]' '[:lower:]')
-if [[ "${POD_STATUS}" != "running" ]]; then
+if [[ "${POD_STATUS}" != "Running" ]]; then
   echo "ERROR: Pod ${POD[0]} is not running" >&2
   exit 1
 fi
